@@ -2,20 +2,17 @@
 
 version: 0.2
 phases:
-install:
-    runtime-versions:
-      java: corretto8
   pre_build:
     commands:
     - echo "Entered the pre-build phase"
   build:
     commands:
     - echo "Entered build phase"
-    - mvn clean prepare-package war:exploded
+    - mvn clean package
   post_build:
     commands:
     - echo "Entered the post-build phase"
-    - mvn clean package
+    - mv target/./
 artifacts:
   files:
-    - 'target/aws-elastic-beanstalk-example-2-0.0.1-SNAPSHOT.war'
+    - target/**/*
