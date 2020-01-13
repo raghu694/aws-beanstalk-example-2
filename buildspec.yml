@@ -15,4 +15,4 @@ phases:
     - mvn package
 artifacts:
   files:
-    - deploy/**/*
+    - 'target/aws-elastic-beanstalk-example-2-0.0.1-SNAPSHOT.war'
